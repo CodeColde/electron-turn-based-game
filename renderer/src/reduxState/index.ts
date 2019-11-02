@@ -1,9 +1,8 @@
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import { combineReducers } from "redux";
 import characters from "./characters/reducers";
 import users from "./registration/reducers";
 import player from "./player/reducers";

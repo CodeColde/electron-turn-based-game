@@ -4,7 +4,9 @@
   "description": "A turn based React game for Electron",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd renderer && npm start\" \"cd main && \"\"wait-on http://localhost:3000/\"\" && npm start\"",
+    "start": "concurrently \"cd renderer && npm start\" \"cd main && wait-on http://localhost:3000/ && npm start\"",
+    "watch": "concurrently \"cd renderer && npm start\" \"cd main && wait-on http://localhost:3000/ && npm run watch\"",
+    "postinstall": "concurrently \"cd renderer && npm install\" \"cd main && npm install\"",
     "typecheck": "concurrently \"cd renderer && npm run typecheck\" \"cd main && npm run typecheck\""
   },
   "repository": {

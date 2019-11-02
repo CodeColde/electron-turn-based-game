@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Statistics } from "../../redux/characters/types";
+import { Statistics } from "../../reduxState/characters/types";
 import Header from "../Atoms/Header";
 
 interface Props {

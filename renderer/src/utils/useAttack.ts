@@ -1,5 +1,5 @@
 import isCrit from "./isCrit";
-import { Character } from "../redux/characters/types";
+import { Character } from "../reduxState/characters/types";
 
 type Type = "attack" | "magic";
 

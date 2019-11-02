@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import { AppState } from "../redux";
-import { PlayerProps } from "../redux/player/types";
+import { AppState } from "../reduxState";
+import { PlayerProps } from "../reduxState/player/types";
 import EnemyDirectory from "../characters/enemies/Enemies";
 import BaseWrapper from "./Containers/BaseWrapper";
 import Header from "./Atoms/Header";

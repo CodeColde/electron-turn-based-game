@@ -4,8 +4,6 @@ var electron_1 = require("electron");
 var path = require("path");
 var isDev = require("electron-is-dev");
 require("electron-reload");
-var logout_1 = require("../../renderer/src/redux/player/logout");
-var redux_1 = require("../../renderer/src/redux");
 var mainWindow;
 function createWindow() {
     mainWindow = new electron_1.BrowserWindow({
@@ -22,7 +20,6 @@ function createWindow() {
         mainWindow && mainWindow.webContents.send('logout');
     });
     mainWindow.on('closed', function () {
-        redux_1.store.dispatch(logout_1.logoutAction);
         mainWindow = null;
     });
 }

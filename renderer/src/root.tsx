@@ -8,7 +8,7 @@ import AccountDetails from "./components/AccountDetails";
 import Menu from "./components/Menu";
 import EnemySelect from "./components/EnemySelect";
 import Battlefield from "./components/Battlefield";
-import { logout } from "./redux/player/logout";
+import { logout } from "./reduxState/player/logout";
 import { connect } from "react-redux";
 
 const Root = () => {

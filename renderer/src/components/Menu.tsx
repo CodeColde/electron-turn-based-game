@@ -1,10 +1,10 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { hasCharacter } from "../redux/player/actions";
-import { logout } from "../redux/player/logout";
-import { LogoutAction, PlayerProps } from "../redux/player/types";
+import { hasCharacter } from "../reduxState/player/actions";
+import { logout } from "../reduxState/player/logout";
+import { LogoutAction, PlayerProps } from "../reduxState/player/types";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
-import { AppState } from "../redux";
+import { AppState } from "../reduxState";
 import styled from "styled-components";
 import theme from "../constants/theme";
 
