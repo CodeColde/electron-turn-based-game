@@ -1,17 +1,17 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { withRouter, RouteComponentProps } from "react-router-dom";
-import { addCharacter } from "../redux/characters/actions";
+import { addCharacter } from "../reduxState/characters/actions";
 import {
   CharacterState,
   Character,
   Statistics
-} from "../redux/characters/types";
-import { AppState } from "../redux";
+} from "../reduxState/characters/types";
+import { AppState } from "../reduxState";
 import CharacterClass from "./characterBuilder/CharacterClass";
 import CharacterRace from "./characterBuilder/CharacterRace";
 import CharacterInfo from "./characterBuilder/CharacterInfo";
-import { PlayerProps } from "../redux/player/types";
+import { PlayerProps } from "../reduxState/player/types";
 import BaseWrapper from "./Containers/BaseWrapper";
 import Header from "./Atoms/Header";
 import Button from "./Atoms/Button";

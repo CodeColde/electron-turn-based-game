@@ -1,6 +1,6 @@
 import * as React from "react";
 import ReactJson from "react-json-view";
-import { CharacterExamples } from "../redux/characters/types";
+import { CharacterExamples } from "../reduxState/characters/types";
 import BaseWrapper from "./Containers/BaseWrapper";
 import Header from "./Atoms/Header";
 import Button from "./Atoms/Button";

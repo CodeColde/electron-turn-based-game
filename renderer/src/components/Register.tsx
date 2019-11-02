@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { createUser } from "../redux/registration/actions";
-import { AppState } from "../redux";
-import { Users, User } from "../redux/registration/types";
+import { createUser } from "../reduxState/registration/actions";
+import { AppState } from "../reduxState";
+import { Users, User } from "../reduxState/registration/types";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
 import StarterWrapper from "./Containers/StarterWrapper";
 import styled from "styled-components";

@@ -1,11 +1,11 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { Character, DeleteCharacterAction } from "../redux/characters/types";
-import { AppState } from "../redux";
-import { deleteCharacter } from "../redux/characters/actions";
+import { Character, DeleteCharacterAction } from "../reduxState/characters/types";
+import { AppState } from "../reduxState";
+import { deleteCharacter } from "../reduxState/characters/actions";
 import { Link, withRouter, RouteComponentProps } from "react-router-dom";
-import { SelectCharacterAction } from "../redux/player/types";
-import { selectCharacter } from "../redux/player/actions";
+import { SelectCharacterAction } from "../reduxState/player/types";
+import { selectCharacter } from "../reduxState/player/actions";
 import BaseWrapper from "./Containers/BaseWrapper";
 import Button from "./Atoms/Button";
 import Header from "./Atoms/Header";

@@ -2,8 +2,6 @@ import { app, BrowserWindow } from 'electron';
 import * as path from 'path';
 import * as isDev from 'electron-is-dev';
 import 'electron-reload';
-import { logoutAction } from '../../renderer/src/redux/player/logout';
-import { store } from '../../renderer/src/redux';
 
 let mainWindow: Electron.BrowserWindow | null;
 
@@ -27,7 +25,6 @@ function createWindow() {
     });
 
     mainWindow.on('closed', () => {
-        store.dispatch(logoutAction);
         mainWindow = null;
     });
 }

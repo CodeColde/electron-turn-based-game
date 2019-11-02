@@ -1,11 +1,11 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
-import { login } from "../redux/player/actions";
-import { AppState } from "../redux";
-import { Users } from "../redux/registration/types";
-import { LoginAction } from "../redux/player/types";
-import { CharacterState } from "../redux/characters/types";
+import { login } from "../reduxState/player/actions";
+import { AppState } from "../reduxState";
+import { Users } from "../reduxState/registration/types";
+import { LoginAction } from "../reduxState/player/types";
+import { CharacterState } from "../reduxState/characters/types";
 import styled from "styled-components";
 import theme from "../constants/theme";
 import Button from "./Atoms/Button";

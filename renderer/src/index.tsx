@@ -1,13 +1,14 @@
 import * as React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-const electron = window.require('electron');
-const ipcRenderer  = electron.ipcRenderer;
 import { PersistGate } from "redux-persist/integration/react";
-import { store, persistor } from "./redux";
+import { store, persistor } from "./reduxState";
 import "./styles.css";
 import Root from "./root";
-import { logoutAction } from "./redux/player/logout";
+import { logoutAction } from "./reduxState/player/logout";
+const electron = window.require('electron');
+const ipcRenderer  = electron.ipcRenderer;
+
 
 export const { getState } = store;
 

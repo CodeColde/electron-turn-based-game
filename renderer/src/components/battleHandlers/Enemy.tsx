@@ -14,7 +14,7 @@ const Enemy: React.FC<Props> = ({ character, setDead }) => {
     if (currentHp <= 0) {
       setDead(true);
     }
-  }, [currentHp]);
+  }, [currentHp, setDead]);
   console.log(setHp);
   return (
     <Wrapper>

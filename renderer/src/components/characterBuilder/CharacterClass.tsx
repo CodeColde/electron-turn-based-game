@@ -1,6 +1,6 @@
 import * as React from "react";
 import Header from "../Atoms/Header";
-import { Statistics } from "../../redux/characters/types";
+import { Statistics } from "../../reduxState/characters/types";
 
 interface Props {
   selectedClass: string;
