@@ -21,6 +21,7 @@ const Root = () => {
       <Route path="/select/" component={EnemySelect} />
       <Route path="/battlefield/" component={Battlefield} />
       <Route path="/account-details/" component={AccountDetails} />
+      <Route path="/reset-password/" component={Login} />
       <Route path="/register/" component={Register} />
     </Router>
   );

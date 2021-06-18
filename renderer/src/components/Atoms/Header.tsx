@@ -2,14 +2,14 @@ import * as React from "react";
 import styled, { css } from "styled-components";
 import theme from "../../constants/theme";
 
-type VariantType = "Large" | "Big" | "Default" | "Medium" | "Small" | "Tiny";
+export type HeaderVariantType = "Large" | "Big" | "Default" | "Medium" | "Small" | "Tiny";
 
 interface Props extends React.HTMLAttributes<{}> {
-  variant?: VariantType;
+  variant?: HeaderVariantType;
   as?: keyof JSX.IntrinsicElements;
 }
 
-const elementMap: { [k in VariantType]: keyof JSX.IntrinsicElements } = {
+const elementMap: { [k in HeaderVariantType]: keyof JSX.IntrinsicElements } = {
   Large: "h1",
   Big: "h2",
   Default: "h3",

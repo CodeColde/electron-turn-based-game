@@ -3,13 +3,14 @@ import { connect } from "react-redux";
 import { withRouter, RouteComponentProps, Link } from "react-router-dom";
 import { login } from "../reduxState/player/actions";
 import { AppState } from "../reduxState";
-import { Users } from "../reduxState/registration/types";
+import { Users, User } from "../reduxState/registration/types";
 import { LoginAction } from "../reduxState/player/types";
 import { CharacterState } from "../reduxState/characters/types";
 import styled from "styled-components";
 import theme from "../constants/theme";
 import Button from "./Atoms/Button";
 import Header from "./Atoms/Header";
+import Error from "./Atoms/Error";
 import StarterWrapper from "./Containers/StarterWrapper";
 
 interface Props extends RouteComponentProps<any> {
@@ -23,26 +24,46 @@ const Home: React.FC<Props> = ({ users, login, history, characters }) => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const handleLogin = async () => {
+  const validate = (user?: User) => {
     if (!username || !password) {
       setError("Please fill in all details");
-      return;
+      return false;
     }
+    if (!user) {
+      setError("This user does not exist");
+      return false;
+    }
+    if (user && user.password !== password) {
+      setError("Incorrect Password, please try again");
+      return false;
+    }
+
+    return true;
+  }
+
+  const handleLogin = async () => {
+    const user = users.find(user => user.username === username);
+    if (validate(user)) {
+      await login(username);
+
+      const hasCharacter = characters.find(item => item.owner === username);
+
+      await history.push(hasCharacter ? "/characters/" : "/create/");
+    }
+  };
+
+  const handleResetCheck = () => {
     const user = users.find(user => user.username === username);
     if (!user) {
       setError("This user does not exist");
       return;
     }
-    if (user && user.password !== password) {
-      setError("Incorrect Password, please try again");
-      return;
+    if (user && validate(user)) {
+      history.push('/change-password/', user.password);
     }
-    await login(username);
+  }
 
-    const hasCharacter = characters.find(item => item.owner === username);
-
-    await history.push(hasCharacter ? "/characters/" : "/create/");
-  };
+  const isReset = window.location.pathname === "/reset-password";
 
   return (
     <StarterWrapper>
@@ -60,7 +81,7 @@ const Home: React.FC<Props> = ({ users, login, history, characters }) => {
         onChange={e => setPassword(e.target.value)}
       />
       <Error variant="Small">{error}</Error>
-      <Button onClick={handleLogin}>Log In</Button>
+      <Button onClick={isReset ? handleResetCheck : handleLogin}>{isReset ? 'Log In' : 'Validate'}</Button>
       <BlockedLink to="/register/">Register</BlockedLink>
     </StarterWrapper>
   );
@@ -94,11 +115,6 @@ const Input = styled.input`
     color: ${theme.colors.eggshell};
     opacity: 0.1;
   }
-`;
-
-const Error = styled(Header)`
-  height: 1rem;
-  color: ${theme.colors.rustyRed};
 `;
 
 const BlockedLink = styled(Link)`

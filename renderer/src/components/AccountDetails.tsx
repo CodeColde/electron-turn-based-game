@@ -9,6 +9,7 @@ import { DeleteUserAction, Users } from "../reduxState/registration/types";
 import BaseWrapper from "./Containers/BaseWrapper";
 import Button from "./Atoms/Button";
 import Header from "./Atoms/Header";
+import InternalLink from "./Atoms/InternalLink";
 
 interface Props extends RouteComponentProps<any> {
   logout: LogoutAction;
@@ -49,6 +50,7 @@ const AccountDetails: React.FC<Props> = ({
       {user && <p>{user.username}</p>}
       <Header>Password</Header>
       {user && <p>{user.password}</p>}
+      <InternalLink url="/reset-password" variant="small">Reset Password</InternalLink>
       <Button onClick={handleLogout} marginRight>
         Logout
       </Button>

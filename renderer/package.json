@@ -39,7 +39,8 @@
     "@types/react-router-dom": "4.3.5",
     "@types/styled-components": "4.1.19",
     "electron": "^7.0.0",
-    "typescript": "3.3.3"
+    "typescript": "3.3.3",
+    "tslint": "5.20.0"
   },
   "scripts": {
     "typecheck": "tsc --project . --noEmit",
